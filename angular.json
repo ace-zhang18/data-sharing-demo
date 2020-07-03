@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "data-sharing-demo"
+  "defaultProject": "data-sharing-demo",
+  "cli": {
+    "analytics": "fa851e2a-8995-4fda-b339-9dc579962795"
+  }
 }

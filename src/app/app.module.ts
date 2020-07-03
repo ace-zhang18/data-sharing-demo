@@ -16,13 +16,15 @@ import { SliderPaneComponent } from './channel-menu/slider-pane/slider-pane.comp
 
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ColorPickerComponent } from './channel-menu/color-picker/color-picker.component';
+import { PixiPaneComponent } from './channel-menu/pixi-pane/pixi-pane.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ChannelMenuComponent,
     SliderPaneComponent,
-    ColorPickerComponent
+    ColorPickerComponent,
+    PixiPaneComponent
   ],
   imports: [
     BrowserAnimationsModule,
