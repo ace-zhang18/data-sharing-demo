@@ -1,0 +1,51 @@
+<div style="margin: 50px;">
+  <ng5-slider [(value)]="value" [(highValue)]="highValue" [options]="options"></ng5-slider>
+</div>
+
+<div style="margin: 0px 0px 50px 50px;">
+  <table cellspacing="6">
+    <tr>
+      <td>
+        <label>New Floor</label>
+        <input #newFloorInput type="number" value="25">
+      </td>
+      <td>
+        <label>New Ceiling</label>
+        <input #newCeilInput type="number" value="725">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button mat-raised-button color="primary" (click)="setNewFloor(newFloorInput.value)">Set new floor</button>
+      </td>
+      <td>
+        <button maat-raised-button color="primary" (click)="setNewCeil(newCeilInput.value)">Set new ceiling</button>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-label>Minimum</mat-label>
+        <input type="number" [(ngModel)]="value">
+      </td>
+      <td>
+        <mat-label>Maximum</mat-label>
+        <input type="number" [(ngModel)]="highValue">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <mat-label>Floor</mat-label>
+        <input matInput type="number" [ngModel]="options.floor">
+      </td>
+      <td>
+        <mat-label>Ceiling</mat-label>
+        <input matInput type="number" [(ngModel)]="options.ceil">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <button mat-raised-button color="primary" (click)="submitValues()">Save settings</button>
+      </td>
+    </tr>
+  </table>
+</div>
