@@ -18,12 +18,12 @@ export class PixiFormComponent implements OnInit {
 
   ngAfterViewInit(){
     console.log(this.canvas)
-    let app = new PIXI.Application({height: 200, width: 200});
+    let app = new PIXI.Application({height: 800, width: 800});
 
     this.canvas.nativeElement.appendChild(app.view)
 
     app.renderer.backgroundColor = 0xFFFFFF;
-    app.loader.add('spinner', 'assets/spinner.jpg').load((loader, resources) => {
+    app.loader.add('spinner', 'assets/blue-marble.jpg').load((loader, resources) => {
       // This creates a texture from a 'bunny.png' image
       const spinner = new PIXI.Sprite(resources.spinner.texture);
   
@@ -41,7 +41,7 @@ export class PixiFormComponent implements OnInit {
       // Listen for frame updates
       app.ticker.add(() => {
            // each frame we spin the bunny around a bit
-          spinner.rotation += 0.01;
+          // spinner.rotation += 0.01;
       });
     });
   }

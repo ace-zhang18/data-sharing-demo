@@ -12,12 +12,10 @@ export class ColorPickerComponent implements OnInit {
   public color1 = 'rgba(0,0,0,0)';
 
   public onEventLog(event: string, data: any): void {
-    //  debugger;
     console.log(event, data);
   }
 
   onColorPickerChange($event) {
-    //  debugger;
   }
 
   toggleShow() {

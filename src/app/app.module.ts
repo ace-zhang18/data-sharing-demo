@@ -17,9 +17,9 @@ import { Ng5SliderModule } from 'ng5-slider';
 
 import { AppComponent } from './app.component';
 import { ChannelMenuComponent } from './channel-menu/channel-menu.component';
-import { SliderPaneComponent } from './channel-menu/slider-pane/slider-pane.component';
-import { ColorPickerComponent } from './channel-menu/color-picker/color-picker.component';
-import { PixiFormComponent } from './channel-menu/pixi-form/pixi-form.component';
+import { SliderPaneComponent } from './slider-pane/slider-pane.component';
+import { ColorPickerComponent } from './color-picker/color-picker.component';
+import { PixiFormComponent } from './pixi-form/pixi-form.component';
 
 @NgModule({
   declarations: [
