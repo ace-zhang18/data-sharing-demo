@@ -1,5 +1,7 @@
 # DataSharingDemo
 
+For NgRx Store-DevTools, in Chrome Browser, go to: [chrome://extensions/], and add the Redux Chrome Extension. It's tab will show in Chrome DevTools.
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22.
 
 ## Development server
