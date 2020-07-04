@@ -1,22 +1,25 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { FormsModule } from '@angular/forms';
-import { MatCardModule } from '@angular/material/card';
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatSliderModule } from '@angular/material/slider';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { Ng5SliderModule } from 'ng5-slider';
-import { ColorPickerModule } from 'ngx-color-picker';
 
 import { AppRoutingModule } from './app-routing.module';
+import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ColorPickerModule } from 'ngx-color-picker';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatListModule } from '@angular/material/list';
+import { MatSliderModule } from '@angular/material/slider';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { Ng5SliderModule } from 'ng5-slider';
+
 import { AppComponent } from './app.component';
 import { ChannelMenuComponent } from './channel-menu/channel-menu.component';
 import { SliderPaneComponent } from './channel-menu/slider-pane/slider-pane.component';
-
-import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { ColorPickerComponent } from './channel-menu/color-picker/color-picker.component';
-import { PixiPaneComponent } from './channel-menu/pixi-pane/pixi-pane.component';
+import { PixiFormComponent } from './channel-menu/pixi-form/pixi-form.component';
 
 @NgModule({
   declarations: [
@@ -24,20 +27,23 @@ import { PixiPaneComponent } from './channel-menu/pixi-pane/pixi-pane.component'
     ChannelMenuComponent,
     SliderPaneComponent,
     ColorPickerComponent,
-    PixiPaneComponent
+    PixiFormComponent
   ],
   imports: [
+    AppRoutingModule,
     BrowserAnimationsModule,
     BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    MatCardModule,
-    MatTabsModule,
-    MatSliderModule,
-    MatFormFieldModule,
-    Ng5SliderModule,
     ColorPickerModule,
-    HttpClientModule
+    FormsModule,
+    HttpClientModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatListModule,
+    MatSidenavModule,
+    MatSliderModule,
+    MatTabsModule,
+    MatToolbarModule,
+    Ng5SliderModule
   ],
   providers: [Document],
   bootstrap: [AppComponent]

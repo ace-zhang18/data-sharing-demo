@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PixiPaneComponent } from './pixi-pane.component';
+import { PixiFormComponent } from './pixi-form.component';
 
-describe('PixiPaneComponent', () => {
-  let component: PixiPaneComponent;
-  let fixture: ComponentFixture<PixiPaneComponent>;
+describe('PixiFormComponent', () => {
+  let component: PixiFormComponent;
+  let fixture: ComponentFixture<PixiFormComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PixiPaneComponent ]
+      declarations: [ PixiFormComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PixiPaneComponent);
+    fixture = TestBed.createComponent(PixiFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

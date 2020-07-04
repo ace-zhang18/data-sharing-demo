@@ -1,23 +1,26 @@
-import { Component, OnInit, ViewChild, ElementRef, Renderer2, Inject } from '@angular/core';
-import * as PIXI from 'pixi.js';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import * as PIXI from 'pixi.js'
 
 @Component({
-  selector: 'app-pixi-pane',
-  templateUrl: './pixi-pane.component.html',
-  styleUrls: ['./pixi-pane.component.scss']
+  selector: 'app-pixi-form',
+  templateUrl: './pixi-form.component.html',
+  styleUrls: ['./pixi-form.component.scss']
 })
-export class PixiPaneComponent implements OnInit {
-	constructor(private elRef:ElementRef) {
-    console.log(elRef.nativeElement)
+export class PixiFormComponent implements OnInit {
+  @ViewChild('canvas')
+  canvas: ElementRef;
+
+  constructor() { }
+
+  ngOnInit(): void {
+
   }
 
-	ngOnInit(): void {
-		// The application will create a renderer using WebGL, if possible,
-		// with a fallback to a canvas render. It will also setup the ticker
-		// and the root stage PIXI.Container
+  ngAfterViewInit(){
+    console.log(this.canvas)
     let app = new PIXI.Application({height: 200, width: 200});
 
-    this.elRef.nativeElement.appendChild(app.view)
+    this.canvas.nativeElement.appendChild(app.view)
 
     app.renderer.backgroundColor = 0xFFFFFF;
     app.loader.add('spinner', 'assets/spinner.jpg').load((loader, resources) => {
@@ -42,4 +45,5 @@ export class PixiPaneComponent implements OnInit {
       });
     });
   }
+
 }
