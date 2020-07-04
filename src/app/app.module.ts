@@ -20,6 +20,10 @@ import { ChannelMenuComponent } from './channel-menu/channel-menu.component';
 import { SliderPaneComponent } from './slider-pane/slider-pane.component';
 import { ColorPickerComponent } from './color-picker/color-picker.component';
 import { PixiFormComponent } from './pixi-form/pixi-form.component';
+import { StoreModule } from '@ngrx/store';
+import { reducers, metaReducers } from './reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -43,7 +47,11 @@ import { PixiFormComponent } from './pixi-form/pixi-form.component';
     MatSliderModule,
     MatTabsModule,
     MatToolbarModule,
-    Ng5SliderModule
+    Ng5SliderModule,
+    StoreModule.forRoot(reducers, {
+      metaReducers
+    }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [Document],
   bootstrap: [AppComponent]
