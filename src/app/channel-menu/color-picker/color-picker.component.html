@@ -1,4 +1,4 @@
-<mat-card style="height: 275px;">
+
   <button (click)="toggleShow()" style="width: 145px;">Toggle Visibility</button><br>
   <ng-container *ngIf="show">
     <input [style.background]="color1" [(colorPicker)]="color1" (colorPickerChange)="onColorPickerChange($event)"
@@ -7,4 +7,3 @@
       (cpSliderDragStart)="onEventLog('cpSliderDragStart', $event)" (cpSliderDragEnd)="onEventLog('cpSliderDragEnd', $event)"/><br>
     <button (click)="sendColor()" style="width: 145px;">Update API Color</button>
   </ng-container>
-</mat-card>

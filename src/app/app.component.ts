@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Options } from 'ng5-slider';
+import * as PIXI from 'pixi.js';
 
 @Component({
   selector: 'app-root',
@@ -7,5 +8,11 @@ import { Options } from 'ng5-slider';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+	constructor() {
 
+  }
+
+	ngOnInit(): void {
+
+  }
 }

@@ -39,7 +39,7 @@ import { PixiPaneComponent } from './channel-menu/pixi-pane/pixi-pane.component'
     ColorPickerModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [Document],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

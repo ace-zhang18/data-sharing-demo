@@ -2,16 +2,22 @@
 
 <mat-tab-group animationDuration="0ms">
   <mat-tab slider1 label="Cy5NaEX">Content 1
-    <form>
-      <app-slider-pane></app-slider-pane>
-    </form>
+    <mat-card style="height: 100%;">
+      <form>
+        <app-slider-pane></app-slider-pane>
+      </form>
+    </mat-card>
   </mat-tab>
   <mat-tab label="RedFish">Content 2
-    <br>
-    <app-color-picker></app-color-picker>
+    <mat-card style="height: 100%;">
+      <app-color-picker></app-color-picker>
+    </mat-card>
   </mat-tab>
-  <mat-tab label="GoldFish">Content 3</mat-tab>
-  
+  <mat-tab label="GoldFish">Content 3
+    <mat-card style="height: 100%;">
+      <app-pixi-pane></app-pixi-pane>
+    </mat-card>
+  </mat-tab>
   <mat-tab label="Custom_Green">Content 4</mat-tab>
   <mat-tab label="AquaFish">Content 5</mat-tab>
   <mat-tab label="DAPI">Content 6</mat-tab>
