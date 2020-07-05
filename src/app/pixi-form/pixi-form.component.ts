@@ -18,7 +18,7 @@ export class PixiFormComponent implements OnInit {
 
   ngAfterViewInit(){
     console.log(this.canvas)
-    let app = new PIXI.Application({height: 800, width: 800});
+    let app = new PIXI.Application({height: 1200, width: 1200});
 
     this.canvas.nativeElement.appendChild(app.view)
 
