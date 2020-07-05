@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PixiFormComponent } from './pixi-form/pixi-form.component';
 
 @Component({
   selector: 'app-channel-menu',
