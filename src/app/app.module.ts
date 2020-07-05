@@ -21,7 +21,7 @@ import { SliderPaneComponent } from './slider-pane/slider-pane.component';
 import { ColorPickerComponent } from './color-picker/color-picker.component';
 import { PixiFormComponent } from './pixi-form/pixi-form.component';
 import { StoreModule } from '@ngrx/store';
-import { reducers, metaReducers } from './reducers';
+// import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 
@@ -48,10 +48,8 @@ import { environment } from '../environments/environment';
     MatTabsModule,
     MatToolbarModule,
     Ng5SliderModule,
-    StoreModule.forRoot(reducers, {
-      metaReducers
-    }),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
+    StoreModule.forRoot({}, {}),
+    StoreDevtoolsModule.instrument({}),
   ],
   providers: [Document],
   bootstrap: [AppComponent]
