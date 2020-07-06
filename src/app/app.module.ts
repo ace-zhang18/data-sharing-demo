@@ -24,6 +24,8 @@ import { StoreModule } from '@ngrx/store';
 // import { reducers, metaReducers } from './reducers';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
+import { StoreRouterConnectingModule, RouterState } from '@ngrx/router-store';
+import { reducers } from './reducers/index';
 
 @NgModule({
   declarations: [
@@ -48,8 +50,12 @@ import { environment } from '../environments/environment';
     MatTabsModule,
     MatToolbarModule,
     Ng5SliderModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument({}),
+    StoreRouterConnectingModule.forRoot({
+      stateKey: 'router',
+      routerState: RouterState.Minimal
+    })
   ],
   providers: [Document],
   bootstrap: [AppComponent]
