@@ -21,7 +21,7 @@ export class PixiFormComponent implements OnInit{
   fileURL;
 
   app;
-  spinner;
+  spinner: PIXI.Sprite;
 
   constructor(
     private http: PixiHttpService,
@@ -71,7 +71,7 @@ export class PixiFormComponent implements OnInit{
       // Listen for frame updates
       this.app.ticker.add(() => {
            // each frame we spin the bunny around a bit
-          this.spinner.rotation += 0.01;
+          // this.spinner.rotation += 0.01;
       });
     });
 
@@ -90,22 +90,22 @@ export class PixiFormComponent implements OnInit{
     this.app.renderer.resize(width, height);
 
     // Setup the position of the bunny
-    this.spinner.x = this.app.renderer.width / 2;
-    this.spinner.y = this.app.renderer.height / 2;
+    // this.spinner.x = this.app.renderer.width / 1;
+    // this.spinner.y = this.app.renderer.height / 2;
 
     // Rotate around the center
-    this.spinner.anchor.x = 0.5;
-    this.spinner.anchor.y = 0.5;
+    // this.spinner.anchor.x = 0.5;
+    // this.spinner.anchor.y = 0.5;
   }
 
   public zoomIn(){
-    this.spinner.scale.x += 0.1
-    this.spinner.scale.y += 0.1
+    this.spinner.scale.x += 0.3
+    this.spinner.scale.y += 0.3
   }
 
   public zoomOut(){
-    this.spinner.scale.x -= 0.1
-    this.spinner.scale.y -= 0.1
+    this.spinner.scale.x -= 0.3
+    this.spinner.scale.y -= 0.3
   }
   
   public blobToFile = (theBlob: Blob, fileName:string): File => {
