@@ -1,6 +1,8 @@
 import { Component, OnInit, ViewChild, ElementRef, HostListener} from '@angular/core';
 import * as PIXI from 'pixi.js'
 import * as $ from 'jquery'
+import { PixiHttpService } from './pixi-http.service';
+import { DomSanitizer } from '@angular/platform-browser'
 
 @Component({
   selector: 'app-pixi-form',
@@ -14,16 +16,29 @@ export class PixiFormComponent implements OnInit{
   @ViewChild('content')
   content: any;
 
+  image_name = 'blue-marble.jpg'
+  image: Blob;
+  fileURL;
+
   app;
   spinner;
 
-  constructor() { }
+  constructor(
+    private http: PixiHttpService,
+    private sanitizer: DomSanitizer
+  ) { }
 
   ngOnInit(): void {
-
+    this.http.getImage(this.image_name)
+      .subscribe(data => {
+        this.load(data)
+      }      
+    )
   }
 
-  ngAfterViewInit(){
+  load(blob: any){
+    const file = this.blobToFile(blob, 'assets/blue-marble.jpg')
+
     const width = this.content.elementRef.nativeElement.clientWidth;
     let height = this.content.elementRef.nativeElement.clientHeight;
 
@@ -33,10 +48,7 @@ export class PixiFormComponent implements OnInit{
     
     this.canvas.nativeElement.appendChild(this.app.view)
 
-    let canvasElm = $(this.canvas.nativeElement).find("canvas")[0]
-    
     this.app.renderer.backgroundColor = 0x000000;
-
 
     this.app.loader.add('spinner', 'assets/blue-marble.jpg').load((loader, resources) => {
       // This creates a texture from a 'bunny.png' image
@@ -95,5 +107,14 @@ export class PixiFormComponent implements OnInit{
     this.spinner.scale.x -= 0.1
     this.spinner.scale.y -= 0.1
   }
+  
+  public blobToFile = (theBlob: Blob, fileName:string): File => {
+    var b: any = theBlob;
+    //A Blob() is almost a File() - it's just missing the two properties below which we will add
+    b.lastModifiedDate = new Date();
+    b.name = fileName;
 
+    //Cast to a File() type
+    return <File>theBlob;
+  }
 }
