@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ColorPickerHttpService } from './color-picker-http.service';
+import { GlobalService } from 'src/app/global.service';
 
 @Component({
   selector: 'app-color-picker',
@@ -17,6 +18,7 @@ export class ColorPickerComponent implements OnInit {
   }
 
   onColorPickerChange($event) {
+    this.glob.setColor(this.color1)
     //  debugger;
   }
 
@@ -33,11 +35,17 @@ export class ColorPickerComponent implements OnInit {
     );
   }
 
+  public getColor(){
+    return this.color1
+  }
+
   constructor(
-    private http: ColorPickerHttpService
+    private http: ColorPickerHttpService,
+    private glob: GlobalService
   ) { }
 
   ngOnInit(): void {
+    this.glob.setColor(this.color1)
   }
 
 }

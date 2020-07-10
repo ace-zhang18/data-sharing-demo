@@ -20,6 +20,7 @@ import { ChannelMenuComponent } from './channel-menu/channel-menu.component';
 import { SliderPaneComponent } from './channel-menu/slider-pane/slider-pane.component';
 import { ColorPickerComponent } from './channel-menu/color-picker/color-picker.component';
 import { PixiFormComponent } from './channel-menu/pixi-form/pixi-form.component';
+import { OpenSeaDragonComponent } from './channel-menu/open-sea-dragon/open-sea-dragon.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { PixiFormComponent } from './channel-menu/pixi-form/pixi-form.component'
     ChannelMenuComponent,
     SliderPaneComponent,
     ColorPickerComponent,
-    PixiFormComponent
+    PixiFormComponent,
+    OpenSeaDragonComponent
   ],
   imports: [
     AppRoutingModule,

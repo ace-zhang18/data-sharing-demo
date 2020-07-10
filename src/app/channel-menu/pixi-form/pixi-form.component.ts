@@ -39,6 +39,8 @@ export class PixiFormComponent implements OnInit{
   load(blob: any){
     const file = this.blobToFile(blob, 'assets/blue-marble.jpg')
 
+    console.log(file)
+
     const width = this.content.elementRef.nativeElement.clientWidth;
     let height = this.content.elementRef.nativeElement.clientHeight;
 
@@ -50,7 +52,7 @@ export class PixiFormComponent implements OnInit{
 
     this.app.renderer.backgroundColor = 0x000000;
 
-    this.app.loader.add('spinner', 'assets/blue-marble.jpg').load((loader, resources) => {
+    this.app.loader.add('spinner', file.name).load((loader, resources) => {
       // This creates a texture from a 'bunny.png' image
       this.spinner = new PIXI.Sprite(resources.spinner.texture);
   

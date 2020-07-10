@@ -1,6 +1,6 @@
 <h3>Channel Menu</h3>
 
-<mat-tab-group animationDuration="0ms" style="height: 100%">
+<mat-tab-group animationDuration="0ms" style="height: 100%" (selectedTabChange)="onTabChanged($event)">
   <mat-tab slider1 label="Cy5NaEX">Content 1
     <mat-card style="height: 100%;">
       <form>
@@ -18,7 +18,9 @@
       <app-pixi-form></app-pixi-form>
     </div>
   </mat-tab>
-  <mat-tab label="Custom_Green">Content 4</mat-tab>
+  <mat-tab label="Custom_Green">Content 4
+    <app-open-sea-dragon></app-open-sea-dragon>
+  </mat-tab>
   <mat-tab label="AquaFish">Content 5</mat-tab>
   <mat-tab label="DAPI">Content 6</mat-tab>
 </mat-tab-group>
