@@ -26,6 +26,8 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { environment } from '../environments/environment';
 import { StoreRouterConnectingModule, RouterState } from '@ngrx/router-store';
 import { reducers } from './reducers/index';
+import { MatButtonModule } from "@angular/material/button";
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
 
 @NgModule({
   declarations: [
@@ -55,7 +57,9 @@ import { reducers } from './reducers/index';
     StoreRouterConnectingModule.forRoot({
       stateKey: 'router',
       routerState: RouterState.Minimal
-    })
+    }),
+    MatButtonModule,
+    MatButtonToggleModule
   ],
   providers: [Document],
   bootstrap: [AppComponent]
