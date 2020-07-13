@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: data-sharing-685ff49f6b-2gcb9
+spec:
+  containers:
+  - name: data-sharing
+    image: acezhang18/data-sharing-demo
+  hostNetwork: true
+  dnsPolicy: Default

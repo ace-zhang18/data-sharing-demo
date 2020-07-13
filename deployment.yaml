@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: data-sharing
+spec:
+  selector:
+    matchLabels:
+      app: data-sharing
+      env: prod
+  minReadySeconds: 5
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        deployedBy: deploy-to-kube
+        app: data-sharing
+        env: prod
+    spec:
+      volumes: []
+      containers:
+        - name: data-sharing
+          image: 'acezhang18/data-sharing-demo'
+          imagePullPolicy: Always
+          ports:
+            - name: http
+              containerPort: 80
